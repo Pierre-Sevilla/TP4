@@ -1,0 +1,37 @@
+Nom du cas : Enchérir
+Objectif : Permettre à l'utilisateur de participer à une enchère en cours
+Acteur : Client 
+
+
+-Sequencement :
+Saisie et validation de la saisie de l'enchère, creation de l'enchere, mise a jour du prix.
+
+-Preconditions :
+	-Le client doit être connecté
+	-La date de fin de l'enchère n'est pas atteinte
+
+
+-Enchainement nominal :
+
+1) Le client défini le prix maximum qu'il est prêt à payer.
+2) Le client défini le prix maximum par palier.
+3) Le système vérifie que les saisies sont ok.
+4) Le système met à jour le prix du produit.
+5) Le système envoi un mail aux participants. 
+
+
+-Enchainement alternatif :
+3)1-Syntaxe saisie invalide
+3)2-Recommencer saisies
+
+3)1-Montants trop faibles
+3)2-Recommencer saisies
+
+3)1-Solde insuffisant
+3)2-Saisie impossible(cout<<"recharger compte";)
+
+
+-Post conditions:
+	-Le montant des enchères est bloqué sur les comptes
+	-L'enchère n'a qu'un seul gagnant
+	-Le montant débité au gagnant correspond au prix final du produit 
